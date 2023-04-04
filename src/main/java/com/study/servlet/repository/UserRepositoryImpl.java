@@ -49,15 +49,11 @@ public class UserRepositoryImpl implements UserRepository {
 			pstmt.setString(3, user.getName());
 			pstmt.setString(4, user.getEmail());
 			successCount = pstmt.executeUpdate();
-					
-			if(rs.next()) {
-				System.out.println("이번에 만들어진 user_id Key값: " + rs.getInt(1));
-				user.setUserId(rs.getInt(1));
-			}			
+							
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			
+			pool.freeConnection(con, pstmt);
 		}
 		return successCount;
 		
@@ -99,7 +95,6 @@ public class UserRepositoryImpl implements UserRepository {
 						.name(rs.getString(4))
 						.email(rs.getString(5))
 						.build();
-				
 			}
 			
 		} catch (Exception e) {

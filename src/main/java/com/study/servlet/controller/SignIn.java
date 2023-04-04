@@ -63,12 +63,29 @@ public class SignIn extends HttpServlet {
 			return;
 		}
 			//로그인 성공
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(); //성공시 session들고옴
 			session.setAttribute("AuthenticationPrincipal", user.getUserId());
 		
 			ResponseDto<Boolean> responseDto = 
 					new ResponseDto<Boolean>(200, "사용자 인증 성공", true);
 			out.println(gson.toJson(responseDto));
 	}
-
+			/**
+			 * 세션과 쿠키
+			 * 
+			 * 클라이언트 저장소 =================== 서버 저장소
+			 * 
+			 *  클라 저장소 
+			 *  1.로컬 스토리지 서버가 종료되도 날아가지않음
+			 *  2. 쿠키  (최근 잘 안씀) 
+			 * 
+			 * 서버 저장소
+			 * 1. 세션 			JSession(브라우저 닫을 시 삭제// 닫지않는한 지속) 만료시간 지날시 사라짐 기본적으로 만료시간은 30분
+			 * 2. Context		셋 다 사용 방법 동일(set/get attribute    key,value값을 꺼냄)  Context:서버 전역 저장소(static) 다같이 사용,중요한 정보X object자료형, 서버의 설정값등을 저장
+			 * 3. Request		해당 요청 안에서만 유용한 저장소 (2,3 거의 안씀) 
+			 * JWT사용시 세션 사용안함 서버 저장소 사용안함 클라이언트에 jwt토큰을 줌. refresh token auth token 두가지를 줌 
+			 * 로컬 스토리지에 refresh token
+			 * 
+			 * 
+			 */
 }
