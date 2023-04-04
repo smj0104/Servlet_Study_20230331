@@ -5,7 +5,7 @@
 %>
 <%
 	//스크립틀릿 java사용가능,실행구간(메소드 안)
-	String wc =(String) request.getAttribute("welcome");'
+	String wc =(String) request.getAttribute("welcome");
 	out.println(wc);
 	int[]numbers = (int[]) request.getAttribute("numbers");
 %>
@@ -18,7 +18,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h1><%wc %></h1>
+ <h1><%=wc %></h1>
  <%
  	for(int i =0; i < numbers.length; i++) {
  %>

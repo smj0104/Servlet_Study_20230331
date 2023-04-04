@@ -83,7 +83,7 @@ public class SignIn extends HttpServlet {
 			 * 1. 세션 			JSession(브라우저 닫을 시 삭제// 닫지않는한 지속) 만료시간 지날시 사라짐 기본적으로 만료시간은 30분
 			 * 2. Context		셋 다 사용 방법 동일(set/get attribute    key,value값을 꺼냄)  Context:서버 전역 저장소(static) 다같이 사용,중요한 정보X object자료형, 서버의 설정값등을 저장
 			 * 3. Request		해당 요청 안에서만 유용한 저장소 (2,3 거의 안씀) 
-			 * JWT사용시 세션 사용안함 서버 저장소 사용안함 클라이언트에 jwt토큰을 줌. refresh token auth token 두가지를 줌 
+			 * JWT사용시 세션 사용안함 서버 저장소 사용안함 클라이언트에 jwt토큰을 줌. refresh token auth token 두가지로 나뉨
 			 * 로컬 스토리지에 refresh token
 			 * 
 			 * 

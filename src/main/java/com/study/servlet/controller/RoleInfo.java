@@ -80,7 +80,7 @@ public class RoleInfo extends HttpServlet {
 		 * WAS(Tomcat)
 		 * client가 WAS를 찾아올때 IP:PORT필요함 (localhost:8080) 뒤에 /
 		 * 요청에 따라 해당 doget dopost 실행
-		 * 요청url뒤?가 붙으면 쿼리파람 시작      key,value값으로 서버로 전달
+		 * 요청url뒤?가 붙으면 쿼리파람       key,value값으로 서버로 전달
 		 * 서버는 getparameter메소드로 받음
  		 *
  		 * header / body로 request요청이 나뉘어서 넘어감 WAS를 통해 servlit doget dopost의 response객체로 넘어감
